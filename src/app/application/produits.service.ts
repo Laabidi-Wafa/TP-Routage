@@ -20,10 +20,12 @@ export class ProduitsService {
       } else return null;
     }
   }
-  public addProduit(id: number, libelle: string) {
+  public addProduit(id: number, libelle: string): boolean {
     var e = this.lesProduits;
-    if (id > 0 && libelle != ' ') {
-      new Produit(id, libelle);
+    if (this.getProduitByID(id) == null) {
+      this.lesProduits.push(new Produit(id, libelle));
+      return true;
     }
+    return false;
   }
 }

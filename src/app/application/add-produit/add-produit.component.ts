@@ -14,18 +14,23 @@ export class AddProduitComponent implements OnInit {
   identifiant: number = 12;
 
   libelle: string = 'PC';
+  submitted: boolean = false;
+  message = '';
   /* ************************************* */
   onSubmit(f: NgForm) {
-    /*premiere methode*/
-    console.log('id = ' + this.identifiant + ' libelle = ' + this.libelle);
-    /*deuxieme méthode*/
-    console.log(
-      'l identifiant de produit est egal a  ' +
-        f.value['id'] +
-        ' et le libelle de produit est egal a ' +
-        f.value['lib']
+    //  console.log(this.identifiant+ " "+ this.libelle);
+    //  console.log("Affichage à partir du formulaire"+f.value['id']+" "+ f.value['lib']);
+    this.submitted = true;
+
+    const ajout = this.ProduitsService.addProduit(
+      this.identifiant,
+      this.libelle
     );
-    /* ************************************* */
+    if (ajout)
+      this.message =
+        'Votre nouveau produit:' + this.libelle + ' a bien été ajouté';
+    else
+      this.message = "Le produit d'id " + this.identifiant + ' existe déjà !';
   }
 
   onAddProd(id: number, libelle: string) {
@@ -34,6 +39,4 @@ export class AddProduitComponent implements OnInit {
   ngOnInit() {
     this.listePr = this.ProduitsService.lesProduits;
   }
-  submitted: boolean = false;
-  message: String;
 }
