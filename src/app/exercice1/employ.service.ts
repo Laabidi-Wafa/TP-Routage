@@ -18,14 +18,15 @@ export class EmployService {
       }
     }
   }
-  addEmploye(
+
+  public addEmploye(
     matricule: number,
-    nom: String,
-    fonction: String,
+    nom: string,
+    fonction: string,
     expert: boolean
   ) {
-    var e = this.lesEmployes;
-    e = [new Employe(matricule, nom, fonction, expert)];
+    for (let e in this.lesEmployes)
+      this.lesEmployes.push(new Employe(matricule, nom, fonction, expert));
   }
 
   constructor() {}
