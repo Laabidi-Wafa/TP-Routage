@@ -10,24 +10,29 @@ import { Employe } from '../Employe';
 export class AjoutEmployeComponent implements OnInit {
   constructor(private EmployService: EmployService) {}
   lesEmployes: Employe[];
-  nom: string = 'Mounir';
+  lesFonctions: string[];
+  nom: string = 'Mounir Ben Salah';
   matricule: number;
   fonction: string = 'Ingenieur';
-  expert: boolean;
+  expert: boolean = true;
   submitted: boolean = false;
   message: String;
 
   onSubmit(f: NgForm) {
     this.submitted = true;
-    const ajout = this.EmployService.addEmploye(
+    this.EmployService.addEmploye(
       this.matricule,
       this.nom,
       this.fonction,
       this.expert
     );
   }
+  lastMatri() {
+    this.EmployService.getLastMatricule();
+  }
 
   ngOnInit() {
     this.lesEmployes = this.EmployService.lesEmployes;
+    this.lesFonctions = this.EmployService.LesFonctions;
   }
 }

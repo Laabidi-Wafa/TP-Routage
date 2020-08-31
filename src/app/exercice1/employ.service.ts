@@ -10,6 +10,7 @@ export class EmployService {
     new Employe(85719, 'Alia Moalla', 'Secrétaire', false),
     new Employe(45879, 'Sami Toumi', 'Ingénieur', true),
   ];
+  LesFonctions = ['Directeur', 'Ingénieur', 'Secrétaire'];
   getEmployeByMatricule(matricules: number) {
     var e = this.lesEmployes;
     for (let e of this.lesEmployes) {
@@ -25,9 +26,12 @@ export class EmployService {
     fonction: string,
     expert: boolean
   ) {
-    for (let e in this.lesEmployes)
-      this.lesEmployes.push(new Employe(matricule, nom, fonction, expert));
+    this.lesEmployes.push(new Employe(matricule, nom, fonction, expert));
   }
-
+  getLastMatricule() {
+    for (let e in this.lesEmployes) {
+      return;
+    }
+  }
   constructor() {}
 }

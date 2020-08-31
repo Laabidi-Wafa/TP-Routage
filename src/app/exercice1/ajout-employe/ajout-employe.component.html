@@ -1,4 +1,5 @@
 <br />
+
 <h3>Ajout d'un employé</h3>
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="form-group">
@@ -11,7 +12,7 @@
       required
       [(ngModel)]="nom"
       #n="ngModel"
-      pattern="[A-Z][a-zA-Z]+"
+      pattern="[A-Z][ a-zA-Z]+"
     />
   </div>
   <!-------------------------------Controle de saisie-------------------------------------------------------------------------------->
@@ -23,31 +24,17 @@
   </div>
   <!--------------------------------------------------------------------------------------------------------------------------------->
   <div class="form-group">
-    <label for="Nom"> La fonction : </label>
-    <input
-      type="text"
-      id="fonction"
-      name="fonction"
-      class="form-control"
-      required
-      [(ngModel)]="fonction"
-      #fonct="ngModel"
-      pattern="[A-Z][a-zA-Z]+"
-    />
+    <label for="Nom" [(ngModel)]="fonction"> La fonction : </label>
+    <select>
+      <optgroup *ngFor="let t of lesFonctions">
+        <option>{{ t }}</option>
+      </optgroup>
+    </select>
   </div>
-  <!-------------------------------Controle de saisie-------------------------------------------------------------------------------->
-  <div *ngIf="fonct.errors?.pattern && fonct.dirty" class="alert alert -danger">
-    La fonction a un format incorrect
-  </div>
-  <div
-    [hidden]="!fonct.errors?.required || fonct.pristine"
-    class="alert alert-danger"
-  >
-    La fonction est un champ obligatoire
-  </div>
+
   <!--------------------------------------------------------------------------------------------------------------------------------->
 
-  <div><input type="checkbox" />Expert</div>
+  <div><input type="checkbox" [checked]="expert" />Expert</div>
   <!--------------------------------------------------------------------------------------------------------------------------------->
   <button
     type="submit"
@@ -56,5 +43,6 @@
   >
     Enregistrer
   </button>
+  <button (click)="lastMatri()">GET</button>
   <!---------------------------------------------------------------------------------------------------------------------------------->
 </form>
