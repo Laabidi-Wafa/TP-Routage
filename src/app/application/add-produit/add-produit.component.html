@@ -1,0 +1,51 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="form-group">
+    <label for="libelle"> Libellé du produit </label>
+    <input
+      type="text"
+      id="libelle"
+      name="lib"
+      class="form-control"
+      [(ngModel)]="libelle"
+      required
+      pattern="[A-Z][a-zA-Z]+"
+      #lib="ngModel"
+    />
+    <div *ngIf="lib.errors?.pattern && lib.dirty" class="alert alert -danger">
+      Le libellé a un format incorrect
+    </div>
+    <div
+      [hidden]="!lib.errors?.required || lib.pristine"
+      class="alert alert-danger"
+    >
+      Le libellé est un champ obligatoire
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="identifiant"> L'identifiant du produit </label>
+    <input
+      type="text"
+      id="identifiant"
+      name="id"
+      class="form-control"
+      [(ngModel)]="identifiant"
+      #identif="ngModel"
+      required
+      pattern="[0-9]+"
+    />
+    <p>{{ lib.className }}</p>
+  </div>
+  <div *ngIf="identif.invalid && identif.dirty" class="alert alert-danger">
+    L'identifiant doit être un nombre
+  </div>
+  <!--************************************************************************************************-->
+  <!--Les bouttons-->
+  <button type="submit" class="btn btn-success btn-sm" [disabled]="f.invalid">
+    Enregistrer
+  </button>
+  <button type="reset" class="btn btn-danger btn-sm">Vider</button>
+  <div [hidden]="!submitted">
+    <container *ngIf=""> {{ message }}</container>
+  </div>
+</form>

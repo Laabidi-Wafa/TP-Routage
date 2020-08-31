@@ -1,7 +1,7 @@
 <h1>La liste des produits</h1>
 <ul>
-  <li *ngFor="let t of lesProduits">
-    L'id :{{ t.id }} Libelle : {{ t.libelle }}
-    <a [routerLink]="['/produits', t.id]"> Détails</a>
+  <li *ngFor="let t of lesProd">
+    L'id :{{ t._id }} Libelle : {{ t._libelle }}
+    <a [routerLink]="['/produits', t._id]"> Détails</a>
   </li>
 </ul>

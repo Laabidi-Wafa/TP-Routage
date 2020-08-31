@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { SelectedEmployeComponent } from './exercice1/selected-employe/selected-
 import { AjoutEmployeComponent } from './exercice1/ajout-employe/ajout-employe.component';
 import { ErrorComponent } from './exercice1/error/error.component';
 import { ProduitComponent } from './application/produit/produit.component';
+import { AddProduitComponent } from './application/add-produit/add-produit.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,11 @@ import { ProduitComponent } from './application/produit/produit.component';
     SelectedEmployeComponent,
     AjoutEmployeComponent,
     ErrorComponent,
-    ProduitComponent
+    ProduitComponent,
+    AddProduitComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
