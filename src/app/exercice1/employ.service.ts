@@ -20,14 +20,13 @@ export class EmployService {
     }
   }
 
-  public addEmploye(
-    matricule: number,
-    nom: string,
-    fonction: string,
-    expert: boolean
-  ) {
-    this.lesEmployes.push(new Employe(matricule, nom, fonction, expert));
+  public addEmploye(nom: string, fonction: string, expert: boolean) {
+    for (let e of this.lesEmployes) {
+      var j = e._matricule + 1;
+      this.lesEmployes.push(new Employe(j, nom, fonction, expert));
+    }
   }
+
   getLastMatricule() {
     for (let e in this.lesEmployes) {
       return;

@@ -1,11 +1,11 @@
 export class Employe {
-  public _matricule: Number;
+  public _matricule: number;
   public _nom: String;
   public _fonction: String;
   public _expert: boolean;
 
   constructor(
-    matricule: Number,
+    matricule: number,
     nom: String,
     fonction: String,
     expert: boolean

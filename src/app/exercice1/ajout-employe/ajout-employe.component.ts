@@ -20,12 +20,7 @@ export class AjoutEmployeComponent implements OnInit {
 
   onSubmit(f: NgForm) {
     this.submitted = true;
-    this.EmployService.addEmploye(
-      this.matricule,
-      this.nom,
-      this.fonction,
-      this.expert
-    );
+    this.EmployService.addEmploye(this.nom, this.fonction, this.expert);
   }
   lastMatri() {
     this.EmployService.getLastMatricule();
