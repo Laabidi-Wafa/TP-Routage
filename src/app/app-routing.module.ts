@@ -13,7 +13,8 @@ import { AjoutEmployeComponent } from './exercice1/ajout-employe/ajout-employe.c
 import { ErrorComponent } from './exercice1/error/error.component';
 import { ProduitComponent } from './application/produit/produit.component';
 import { AddProduitComponent } from './application/add-produit/add-produit.component';
-
+import { PlusProduitComponent } from './application/plus-produit/plus-produit.component';
+/*
 const routes: Routes = [
   { path: 'presentation', component: PresentationComponent },
   { path: 'listesemployes', component: EmployesListComponent },
@@ -21,17 +22,18 @@ const routes: Routes = [
   { path: 'listesemployes/:matricule', component: SelectedEmployeComponent },
   { path: '', redirectTo: 'presentation', pathMatch: 'full' },
   { path: '**', component: ErrorComponent },
-];
-/*
+];*/
+
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'produits', component: ProduitsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'produits/:id', component: ProduitComponent },
   { path: 'ajoutProduit', component: AddProduitComponent },
+  { path: 'plusproduit', component: PlusProduitComponent },
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: '**', component: Error404Component },
-];*/
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

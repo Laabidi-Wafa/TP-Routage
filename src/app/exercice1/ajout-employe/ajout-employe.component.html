@@ -16,7 +16,7 @@
     />
   </div>
   <!-------------------------------Controle de saisie-------------------------------------------------------------------------------->
-  <div *ngIf="n.errors?.pattern && n.dirty" class="alert alert -danger">
+  <div *ngIf="n.errors?.pattern && n.dirty" class="alert alert-warning">
     Le nom a un format incorrect
   </div>
   <div [hidden]="!n.errors?.required || n.pristine" class="alert alert-danger">

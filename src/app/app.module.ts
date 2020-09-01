@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { AjoutEmployeComponent } from './exercice1/ajout-employe/ajout-employe.c
 import { ErrorComponent } from './exercice1/error/error.component';
 import { ProduitComponent } from './application/produit/produit.component';
 import { AddProduitComponent } from './application/add-produit/add-produit.component';
+import { PlusProduitComponent } from './application/plus-produit/plus-produit.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +36,9 @@ import { AddProduitComponent } from './application/add-produit/add-produit.compo
     ErrorComponent,
     ProduitComponent,
     AddProduitComponent,
+    PlusProduitComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
