@@ -16,15 +16,16 @@ export class AjoutEmployeComponent implements OnInit {
   fonction: string = 'Ingenieur';
   expert: boolean = true;
   submitted: boolean = false;
-  message: String;
+  message: string;
 
   onSubmit(f: NgForm) {
     this.submitted = true;
     this.EmployService.addEmploye(this.nom, this.fonction, this.expert);
   }
+  /*
   lastMatri() {
     this.EmployService.getLastMatricule();
-  }
+  }*/
 
   ngOnInit() {
     this.lesEmployes = this.EmployService.lesEmployes;
