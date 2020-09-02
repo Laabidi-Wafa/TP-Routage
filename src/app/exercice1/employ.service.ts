@@ -11,11 +11,11 @@ export class EmployService {
     new Employe(45879, 'Sami Toumi', 'Ingénieur', true),
   ];
   LesFonctions = ['Directeur', 'Ingénieur', 'Secrétaire'];
+
   getEmployeByMatricule(matricules: number) {
-    var e = this.lesEmployes;
     for (let e of this.lesEmployes) {
       if (e._matricule == matricules) {
-        return '<p>' + e._nom, e._fonction, e._matricule + '</p>';
+        return e;
       }
     }
   }
@@ -26,11 +26,11 @@ export class EmployService {
       this.lesEmployes.push(new Employe(j, nom, fonction, expert));
     }
   }
-
+  /*
   getLastMatricule() {
     for (let e in this.lesEmployes) {
       return;
-    }
-  }
+    } 
+  }*/
   constructor() {}
 }
