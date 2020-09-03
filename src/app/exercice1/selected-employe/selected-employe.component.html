@@ -1,6 +1,17 @@
+<h1>Détail Employé</h1>
 <li class="list-group-item">
   {{ matricule }}
+</li>
+<li class="list-group-item">
   {{ employe.nom }}
 </li>
+<li class="list-group-item">
+  {{ employe.fonction }}
+</li>
+<li class="list-group-item">
+  <input type="checkbox" [checked]="employe.expert" /> Expert
+</li>
 
-<a class="nav-link" [routerLink]="['/listesemployes']">Retour</a>
+<button class="btn btn-primary btn-sm" [routerLink]="['/listesemployes']">
+  Retour
+</button>

@@ -10,12 +10,13 @@ import { Employe } from '../employe';
 export class SelectedEmployeComponent implements OnInit {
   lesEmployes: Employe[];
   selectedEmploye;
+  employe;
   matricule: number;
   constructor(
     private activatedRoute: ActivatedRoute,
     private EmployService: EmployService
   ) {}
-
+  expert: boolean = true;
   /*;
   onSelectedEmploye(matricule: number) {
     this.EmployService.getEmployeByMatricule(matricule);
@@ -23,8 +24,6 @@ export class SelectedEmployeComponent implements OnInit {
   ngOnInit() {
     this.matricule = this.activatedRoute.snapshot.params['matricule'];
     this.lesEmployes = this.EmployService.lesEmployes;
-    this.selectedEmploye = this.EmployService.getEmployeByMatricule(
-      this.matricule
-    );
+    this.employe = this.EmployService.getEmployeByMatricule(this.matricule);
   }
 }
