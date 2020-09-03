@@ -14,7 +14,7 @@ export class EmployService {
 
   getEmployeByMatricule(matricules: number) {
     for (let e of this.lesEmployes) {
-      if (e._matricule == matricules) {
+      if (e.matricule == matricules) {
         return e;
       }
     }
@@ -22,7 +22,7 @@ export class EmployService {
 
   public addEmploye(nom: string, fonction: string, expert: boolean) {
     for (let e of this.lesEmployes) {
-      var j = e._matricule + 1;
+      var j = e.matricule + 1;
       this.lesEmployes.push(new Employe(j, nom, fonction, expert));
     }
   }
