@@ -20,10 +20,10 @@ export class EmployService {
     }
   }
 
-  public addEmploye(nom: string, fonction: string, expert: boolean) {
+  public addEmploye(nom: string, poste: string, expert: boolean) {
     for (let e of this.lesEmployes) {
       var j = e.matricule + 1;
-      this.lesEmployes.push(new Employe(j, nom, fonction, expert));
+      this.lesEmployes.push(new Employe(j, nom, poste, expert));
     }
   }
   /*

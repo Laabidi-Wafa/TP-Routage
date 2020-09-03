@@ -3,13 +3,13 @@
   {{ matricule }}
 </li>
 <li class="list-group-item">
-  {{ employe.nom }}
+  {{ selectedEmploye.nom }}
 </li>
 <li class="list-group-item">
-  {{ employe.fonction }}
+  {{ selectedEmploye.fonction }}
 </li>
 <li class="list-group-item">
-  <input type="checkbox" [checked]="employe.expert" /> Expert
+  <input type="checkbox" [checked]="selectedEmploye.expert" /> Expert
 </li>
 
 <button class="btn btn-primary btn-sm" [routerLink]="['/listesemployes']">
