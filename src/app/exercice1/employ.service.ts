@@ -15,7 +15,7 @@ export class EmployService {
   getEmployeByMatricule(matricules: number) {
     for (let e of this.lesEmployes) {
       if (e.matricule == matricules) {
-        return e;
+        return console.log(e);
       }
     }
   }

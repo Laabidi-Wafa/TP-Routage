@@ -1,11 +1,12 @@
 <h1>Employés de l'entreprise</h1>
 <ul>
-  <li *ngFor="let t of lesEmplo" [ngClass]="{ 'list-group-item': true }">
+  <li *ngFor="let t of lesEmplo" class="list-group-item">
     {{ t._matricule }} {{ t._nom }}
-    <a
+    <button
       [routerLink]="['/listesemployes', t._matricule]"
       class="btn btn-primary btn-sm"
-      >Détails</a
     >
+      Infos
+    </button>
   </li>
 </ul>
