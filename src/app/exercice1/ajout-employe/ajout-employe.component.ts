@@ -12,7 +12,7 @@ export class AjoutEmployeComponent implements OnInit {
   lesEmployes: Employe[];
   lesFonctions: string[];
   nom: string = 'Mounir Ben Salah';
-  matricule: number;
+  matricule: number = 123456;
   fonction: string = 'Ingenieur';
   expert: boolean = true;
   submitted: boolean = false;

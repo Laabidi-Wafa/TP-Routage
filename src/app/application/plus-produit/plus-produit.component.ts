@@ -35,15 +35,15 @@ export class PlusProduitComponent implements OnInit {
     this.submitted = true;
 
     const ajout = this.ProduitsService.addProduit(
-      this.productForm.value['id'],
-      this.productForm.value['libelle']
+      this.productForm.get('id').value,
+      this.productForm.get('libelle').value
     );
     if (ajout)
       (this.message =
-        'Votre nouveau produit:' + this.productForm.value['libelle']),
+        'Votre nouveau produit:' + this.productForm.get('libelle').value),
         +' a bien été ajouté';
     else
-      (this.message = "Le produit d'id " + this.productForm.value['id']),
+      (this.message = "Le produit d'id " + this.productForm.get('id').value),
         +' existe déjà !';
   }
   ngOnInit() {
