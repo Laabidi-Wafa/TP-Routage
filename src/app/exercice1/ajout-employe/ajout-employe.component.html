@@ -25,16 +25,21 @@
   <!--------------------------------------------------------------------------------------------------------------------------------->
   <div class="form-group">
     <label for="Nom" [(ngModel)]="fonction"> La fonction : </label>
-    <select>
-      <optgroup *ngFor="let t of lesFonctions">
-        <option>{{ t }}</option>
-      </optgroup>
+    <select [(ngModel)]="fonction">
+      <option *ngFor="let t of lesFonctions">{{ t }}</option>
     </select>
   </div>
 
   <!--------------------------------------------------------------------------------------------------------------------------------->
 
-  <div><input type="checkbox" [checked]="expert" />Expert</div>
+  <div>
+    <input
+      type="checkbox"
+      [(ngModel)]="expert"
+      value="expert"
+      name="ex"
+    />Expert
+  </div>
   <!--------------------------------------------------------------------------------------------------------------------------------->
   <button
     type="submit"
