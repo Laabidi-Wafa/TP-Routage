@@ -48,5 +48,15 @@
   >
     Enregistrer
   </button>
+
   <!---------------------------------------------------------------------------------------------------------------------------------->
 </form>
+<container *ngIf="submitted == true">
+  <p>L'employé {{ n.value }} a été ajouté avec succés</p>
+  <button [routerLink]="['/ajouteremploye']" class="btn btn-primary btn-sm">
+    Ajouter un autre employé
+  </button>
+  <button [routerLink]="['/listesemployes']" class="btn btn-secondary btn-sm">
+    Liste des employés
+  </button>
+</container>

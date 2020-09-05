@@ -24,11 +24,10 @@ export class EmployService {
     let mat = this.lesEmployes[this.lesEmployes.length - 1].matricule + 1;
     this.lesEmployes.push(new Employe(mat, nom, poste, expert));
   }
-  /*
+
   getLastMatricule() {
-    for (let e in this.lesEmployes) {
-      return;
-    } 
-  }*/
+    return console.log(this.lesEmployes[this.lesEmployes.length - 1].matricule);
+  }
+  onRedirect() {}
   constructor() {}
 }

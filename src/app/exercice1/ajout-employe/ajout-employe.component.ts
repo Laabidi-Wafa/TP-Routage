@@ -22,10 +22,10 @@ export class AjoutEmployeComponent implements OnInit {
     this.submitted = true;
     this.EmployService.addEmploye(this.nom, this.fonction, this.expert);
   }
-  /*
+
   lastMatri() {
     this.EmployService.getLastMatricule();
-  }*/
+  }
 
   ngOnInit() {
     this.lesEmployes = this.EmployService.lesEmployes;
